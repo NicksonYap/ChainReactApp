@@ -92,7 +92,8 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.0'
+        // classpath 'com.android.tools.build:gradle:2.1.0'
+        classpath 'com.android.tools.build:gradle:2.3.3'
     }
 }
 
@@ -115,10 +116,10 @@ android {
             abiFilters "armeabi-v7a", "x86"
         }
         // Added for react-native-blur
-        renderscriptTargetApi 23
+        renderscriptTargetApi 25
         renderscriptSupportModeEnabled true
-        compileSdkVersion 23
-        buildToolsVersion "23.0.3"
+        compileSdkVersion 25
+        buildToolsVersion "25.0.0"
     }
     splits {
         abi {
@@ -169,9 +170,9 @@ allprojects {
             // def file = new File('$rootDir/../node_modules/react-native/package.json')
             // def version = new groovy.json.JsonSlurper().parseText(file.text).version
             // details.useVersion version
-            details.useVersion "0.45.1" // Your real React Native version here
+            details.useVersion "0.56.0" // Your real React Native version here
           } else if (details.getRequested().getGroup() == 'com.google.android.gms') {
-            details.useVersion('10.2.0+')
+            details.useVersion('15.0.1+')
           }
         }
       }
@@ -187,9 +188,9 @@ dependencies {
         exclude group: 'com.google.android.gms', module: 'play-services-base'
         exclude group: 'com.google.android.gms', module: 'play-services-maps'
     }
-    compile 'com.google.android.gms:play-services-base:10.2.0'
-    compile 'com.google.android.gms:play-services-maps:10.2.0'
-    compile ('com.google.android.gms:play-services-gcm:10.2.0') {
+    compile 'com.google.android.gms:play-services-base:15.0.1'
+    compile 'com.google.android.gms:play-services-maps:15.0.1'
+    compile ('com.google.android.gms:play-services-gcm:15.0.1') {
         force = true;
     }
 
